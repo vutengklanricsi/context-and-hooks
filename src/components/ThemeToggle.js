@@ -1,3 +1,15 @@
+import React, {useContext} from "react";
+import { ThemeContext } from "../context/ThemeContext";
+
+const ThemeToggle = () => {
+  const { toggleTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={toggleTheme}>Toggle the theme</button>
+  )
+
+};
+
+export default ThemeToggle;
 // import React, { Component } from "react";
 // import { ThemeContext } from "../context/ThemeContext";
 
@@ -9,19 +21,3 @@
 //     return <button onClick={toggleTheme}>Toggle the theme</button>;
 //   }
 // }
-import React from "react";
-import { ThemeContext } from "../context/ThemeContext";
-
-const ThemeToggle = () => {
-  return (
-    <ThemeContext.Consumer>{(context) => {
-        const { toggleTheme } = context;
-				return (
-					<button onClick={toggleTheme}>Toggle the theme</button>
-				)
-      }}
-    </ThemeContext.Consumer>
-  );
-};
-
-export default ThemeToggle;
